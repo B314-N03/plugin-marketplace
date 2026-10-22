@@ -1,0 +1,6 @@
+{
+  "name": "decks",
+  "version": "0.1.0",
+  "author": { "name": "Béla Noé" },
+  "description": "Marp slide decks on tech topics, feature/release decks researched from changelogs, and Obsidian canvas maps."
+}

@@ -1,0 +1,7 @@
+{
+  "name": "mods",
+  "version": "0.2.0",
+  "author": { "name": "Béla Noé" },
+  "description": "Mod manager: /mods opens (or closes) a keyboard-driven pane listing every mod (what it does, its commands, on/off, loads at startup) with buttons to switch each one.",
+  "types": "./types/index.d.ts"
+}

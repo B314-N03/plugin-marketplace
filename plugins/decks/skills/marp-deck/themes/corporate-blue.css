@@ -1,0 +1,15 @@
+/* Corporate blue: light slides under a #0078d4 header bar; title and closing slides in full brand blue. */
+section {
+  --bg: #ffffff; --fg: #242424; --muted: #616161; --footer: #8a8a8a;
+  --h1: #0078d4; --h2: #005a9e; --h2-rule: transparent; --accent: #005a9e; --link: #0078d4;
+  --code-bg: #f0f0f0; --code-fg: #242424; --pre-bg: #f5f5f5; --pre-fg: #242424; --border: #d1d1d1;
+  --th-bg: #0078d4; --th-fg: #ffffff; --td-bg: #ffffff; --td-alt: #f3f9fd;
+  --callout-bg: #eff6fc; --callout-border: #0078d4;
+  --hl-keyword: #cf222e; --hl-string: #0a3069; --hl-attr: #0550ae; --hl-comment: #6e7781;
+  --hl-number: #0550ae; --hl-title: #8250df; --hl-builtin: #953800; --hl-variable: #953800; --hl-tag: #116329;
+  --term-bg: #1b1b1b; --term-bar: #2b2b2b; --term-fg: #f3f3f3; --term-prompt: #f1707b; --term-muted: #a0a0a0; --term-border: #3d3d3d;
+  --pad-y: 64px; --pad-x: 72px;
+  border-top: 16px solid #0078d4;
+}
+section.lead { background: #0078d4; color: #ffffff; border-top: 0; --muted: #deecf9; --accent: #ffffff; --footer: #c7e0f4; --code-bg: rgba(255, 255, 255, 0.18); --code-fg: #ffffff; }
+section.lead h1 { color: #ffffff; }

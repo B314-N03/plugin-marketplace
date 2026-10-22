@@ -1,0 +1,41 @@
+{
+  "name": "b314",
+  "owner": {
+    "name": "Béla Noé"
+  },
+  "metadata": {
+    "description": "Béla's Claude Code mods and skills."
+  },
+  "plugins": [
+    {
+      "name": "mods",
+      "source": "./plugins/mods",
+      "description": "Mod manager pane: list, inspect and switch your mods from the keyboard."
+    },
+    {
+      "name": "mod-builder",
+      "source": "./plugins/mod-builder",
+      "description": "Skill for building Claude Code mods to a tested, keyboard-first quality bar."
+    },
+    {
+      "name": "briefings",
+      "source": "./plugins/briefings",
+      "description": "News briefings: AI, web tech, geopolitics, cybersecurity, economy and space, plus a combined morning digest."
+    },
+    {
+      "name": "decks",
+      "source": "./plugins/decks",
+      "description": "Marp slide decks on tech topics, feature/release decks researched from changelogs, and Obsidian canvas maps."
+    },
+    {
+      "name": "dev-tools",
+      "source": "./plugins/dev-tools",
+      "description": "Everyday dev skills: cleanup, dependency audit and package scouting, docs, explanations, bug hunting, commits, PR review, scaffolding, change summaries and justfiles."
+    },
+    {
+      "name": "skill-tools",
+      "source": "./plugins/skill-tools",
+      "description": "Skills for skills: write, audit and refactor skills, tour what is installed, and run session retrospectives."
+    }
+  ]
+}

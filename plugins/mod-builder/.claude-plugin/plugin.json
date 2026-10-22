@@ -1,0 +1,6 @@
+{
+  "name": "mod-builder",
+  "version": "0.2.0",
+  "author": { "name": "Béla Noé" },
+  "description": "Skill that builds Claude Code mods to a fixed quality bar: tested templates, an on/off switch, a bare /<mod> toggle, keyboard-first panes, and a validate + type-check + test gate."
+}

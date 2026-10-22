@@ -1,0 +1,8 @@
+{
+  "name": "skill-tools",
+  "version": "0.1.1",
+  "author": {
+    "name": "Béla Noé"
+  },
+  "description": "Skills for skills: write, audit and refactor skills, tour what is installed, and run session retrospectives."
+}

@@ -1,0 +1,12 @@
+/* Nord / minimal dark: soft blue-grey background, muted pastel accents, extra whitespace. */
+section {
+  --bg: #2e3440; --fg: #e5e9f0; --muted: #a7b1c2; --footer: #6b7689;
+  --h1: #88c0d0; --h2: #81a1c1; --h2-rule: transparent; --accent: #ebcb8b; --link: #88c0d0;
+  --code-bg: #3b4252; --code-fg: #a3be8c; --pre-bg: #3b4252; --pre-fg: #d8dee9; --border: #4c566a;
+  --th-bg: #3b4252; --th-fg: #88c0d0; --td-bg: #2e3440; --td-alt: #343b49;
+  --callout-bg: #3b4252; --callout-border: #88c0d0;
+  --hl-keyword: #81a1c1; --hl-string: #a3be8c; --hl-attr: #8fbcbb; --hl-comment: #616e88;
+  --hl-number: #b48ead; --hl-title: #88c0d0; --hl-builtin: #d08770; --hl-variable: #d8dee9; --hl-tag: #81a1c1;
+  --term-bg: #242933; --term-bar: #3b4252; --term-fg: #d8dee9; --term-prompt: #bf616a; --term-muted: #7b88a1; --term-border: #4c566a;
+  --pad-y: 72px; --pad-x: 96px;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "tpl-poller",
+  "version": "0.1.0",
+  "description": "Status line with the working tree's uncommitted files and unpushed commits, polled in the background.",
+  "types": "./types/index.d.ts"
+}

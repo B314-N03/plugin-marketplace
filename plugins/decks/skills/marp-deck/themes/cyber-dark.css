@@ -1,0 +1,12 @@
+/* Cyber dark: GitHub-dark background, red H1, blue H2 with rule, orange strong, green inline code. */
+section {
+  --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --footer: #6e7681;
+  --h1: #ff6b6b; --h2: #79c0ff; --h2-rule: #79c0ff; --accent: #ffa657; --link: #58a6ff;
+  --code-bg: #1f2630; --code-fg: #7ee787; --pre-bg: #161b22; --pre-fg: #e6edf3; --border: #30363d;
+  --th-bg: #21262d; --th-fg: #79c0ff; --td-bg: #0d1117; --td-alt: #161b22;
+  --callout-bg: #161b22; --callout-border: #ff6b6b;
+  --hl-keyword: #ff7b72; --hl-string: #a5d6ff; --hl-attr: #79c0ff; --hl-comment: #8b949e;
+  --hl-number: #79c0ff; --hl-title: #d2a8ff; --hl-builtin: #ffa657; --hl-variable: #ffa657; --hl-tag: #7ee787;
+  --term-bg: #010409; --term-bar: #161b22; --term-fg: #e6edf3; --term-prompt: #ff7b72; --term-muted: #8b949e; --term-border: #30363d;
+  --pad-y: 56px; --pad-x: 72px;
+}

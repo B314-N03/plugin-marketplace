@@ -1,0 +1,5 @@
+{
+  "name": "tpl-guard",
+  "version": "0.1.0",
+  "description": "Blocks edits to protected files (.env, lockfiles) and toasts when a shell command fails."
+}

@@ -1,0 +1,12 @@
+/* Light / clean: white background, dark text, one blue accent. Projector- and print-safe. */
+section {
+  --bg: #ffffff; --fg: #1f2328; --muted: #59636e; --footer: #818b98;
+  --h1: #1f2328; --h2: #0969da; --h2-rule: transparent; --accent: #0969da; --link: #0969da;
+  --code-bg: #eff1f3; --code-fg: #1f2328; --pre-bg: #f6f8fa; --pre-fg: #1f2328; --border: #d1d9e0;
+  --th-bg: #f6f8fa; --th-fg: #1f2328; --td-bg: #ffffff; --td-alt: #f6f8fa;
+  --callout-bg: #ddf4ff; --callout-border: #0969da;
+  --hl-keyword: #cf222e; --hl-string: #0a3069; --hl-attr: #0550ae; --hl-comment: #59636e;
+  --hl-number: #0550ae; --hl-title: #8250df; --hl-builtin: #953800; --hl-variable: #953800; --hl-tag: #116329;
+  --term-bg: #1f2328; --term-bar: #2d333b; --term-fg: #e6edf3; --term-prompt: #f47067; --term-muted: #8b949e; --term-border: #444c56;
+  --pad-y: 56px; --pad-x: 72px;
+}

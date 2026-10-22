@@ -1,0 +1,6 @@
+{
+  "name": "dev-tools",
+  "version": "0.1.0",
+  "author": { "name": "Béla Noé" },
+  "description": "Everyday dev skills: cleanup, dependency audit and package scouting, docs, explanations, bug hunting, commits, PR review, scaffolding, change summaries and justfiles."
+}

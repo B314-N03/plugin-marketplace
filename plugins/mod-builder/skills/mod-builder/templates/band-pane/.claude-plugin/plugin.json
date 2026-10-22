@@ -1,0 +1,6 @@
+{
+  "name": "tpl-panel",
+  "version": "0.1.0",
+  "description": "Band above the prompt with this turn's tool calls, and a pane listing the recent ones.",
+  "types": "./types/index.d.ts"
+}

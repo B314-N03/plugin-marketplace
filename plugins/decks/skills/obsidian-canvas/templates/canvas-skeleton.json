@@ -1,0 +1,9 @@
+{
+  "nodes": [
+    { "id": "g-example", "type": "group", "label": "Layer Name", "x": -400, "y": -300, "width": 800, "height": 220, "color": "5" },
+    { "id": "n-example", "type": "text", "x": -380, "y": -260, "width": 360, "height": 120, "color": "5", "text": "**Title**\n\nOne-line description." }
+  ],
+  "edges": [
+    { "id": "e-example", "fromNode": "g-example", "fromSide": "right", "toNode": "g-example", "toSide": "left", "label": "uses" }
+  ]
+}

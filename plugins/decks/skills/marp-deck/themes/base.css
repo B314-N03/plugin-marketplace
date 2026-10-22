@@ -1,0 +1,141 @@
+/* Shared layout for every theme. Built on Marp's `default` theme; never on `uncover`,
+   whose centered text, footer glow and decorative blockquote quotes this file would fight. */
+section {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 28px;
+  letter-spacing: normal;
+  line-height: 1.4;
+  text-align: left;
+  background: var(--bg);
+  color: var(--fg);
+  padding: var(--pad-y) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+section::after, footer, header {
+  color: var(--footer);
+  text-shadow: none;
+  font-size: 0.55em;
+}
+h1, h2, h3 { border: 0; padding: 0; letter-spacing: normal; text-decoration: none; }
+h1 { color: var(--h1); font-size: 1.55em; margin: 0 0 0.55em; }
+h2 {
+  color: var(--h2);
+  font-size: 1.05em;
+  margin: 0.2em 0 0.4em;
+  align-self: flex-start;
+  border-bottom: 3px solid var(--h2-rule);
+  padding-bottom: 0.05em;
+}
+h3 { color: var(--h2); font-size: 0.85em; margin: 0.3em 0; }
+p, li { font-size: 0.9em; }
+li li, li p, blockquote li { font-size: 1em; }
+li { margin-bottom: 0.25em; }
+strong { color: var(--accent); font-weight: 700; }
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid currentColor; }
+code {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.08em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+h1 code, h2 code, h3 code { color: inherit; white-space: nowrap; }
+pre {
+  background: var(--pre-bg);
+  color: var(--pre-fg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75em 1em;
+  margin: 0.4em 0;
+  font-size: 0.62em;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre;
+  overflow: hidden;
+  align-self: stretch;
+}
+pre code { background: transparent; color: inherit; padding: 0; font-size: 1em; display: block; text-align: left; }
+.hljs-keyword, .hljs-selector-tag, .hljs-doctag { color: var(--hl-keyword); }
+.hljs-string, .hljs-regexp { color: var(--hl-string); }
+.hljs-attr, .hljs-attribute, .hljs-property { color: var(--hl-attr); }
+.hljs-comment, .hljs-quote { color: var(--hl-comment); font-style: italic; }
+.hljs-number, .hljs-literal, .hljs-symbol { color: var(--hl-number); }
+.hljs-title, .hljs-section, .hljs-function { color: var(--hl-title); }
+.hljs-built_in, .hljs-type, .hljs-bullet, .hljs-meta { color: var(--hl-builtin); }
+.hljs-variable, .hljs-template-variable, .hljs-params { color: var(--hl-variable); }
+.hljs-tag, .hljs-name { color: var(--hl-tag); }
+/* Every table spans the content width so tables look identical from slide to slide. */
+table { display: table; width: 100%; font-size: 0.72em; border-collapse: collapse; margin: 0.4em 0; align-self: stretch; }
+table tr { border: 0; background: transparent; }
+table th, table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.45em 0.85em;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+}
+table th { background: var(--th-bg); color: var(--th-fg); font-weight: 700; }
+table td { background: var(--td-bg); }
+table tr:nth-child(2n) td { background: var(--td-alt); }
+table code { white-space: nowrap; }
+table strong { color: inherit; }
+table th code { color: inherit; background: transparent; padding: 0; }
+blockquote {
+  quotes: none;
+  border: 0;
+  border-left: 5px solid var(--callout-border);
+  border-radius: 0 6px 6px 0;
+  background: var(--callout-bg);
+  color: var(--fg);
+  padding: 0.55em 1em;
+  margin: 0.5em 0;
+}
+blockquote::before, blockquote::after { content: none; }
+blockquote p { font-size: 0.85em; margin: 0; }
+section.lead { justify-content: center; text-align: center; }
+section.lead h1 { font-size: 2em; margin-bottom: 0.35em; }
+section.lead h2 { align-self: center; }
+section.lead p { color: var(--muted); }
+section.lead strong { color: var(--accent); }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; }
+img { max-width: 100%; }
+
+/* Shell fences (bash, sh, shell, zsh, console) render as a terminal window: title bar with
+   traffic-light dots, a red root prompt (`root@<slug> #`) before the command, no syntax colors. */
+pre:has(> code:is(.language-bash, .language-sh, .language-shell, .language-zsh, .language-console)) {
+  background: var(--term-bg);
+  color: var(--term-fg);
+  border: 1px solid var(--term-border);
+  padding: 0 1em 0.8em;
+}
+pre:has(> code:is(.language-bash, .language-sh, .language-shell, .language-zsh, .language-console))::before {
+  content: "zsh";
+  display: block;
+  margin: 0 -1em 0.7em;
+  padding: 0.3em 0;
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--term-muted);
+  border-bottom: 1px solid var(--term-border);
+  background:
+    radial-gradient(circle at 1.1em 50%, #ff5f57 0.3em, transparent 0.33em),
+    radial-gradient(circle at 2em 50%, #febc2e 0.3em, transparent 0.33em),
+    radial-gradient(circle at 2.9em 50%, #28c840 0.3em, transparent 0.33em),
+    var(--term-bar);
+}
+pre > code:is(.language-bash, .language-sh, .language-shell, .language-zsh, .language-console)::before {
+  content: var(--shell-prompt, "root@host") " # ";
+  color: var(--term-prompt);
+  font-weight: 700;
+}
+pre > code:is(.language-bash, .language-sh, .language-shell, .language-zsh, .language-console) span {
+  color: inherit;
+  font-style: normal;
+}
+pre > code:is(.language-bash, .language-sh, .language-shell, .language-zsh, .language-console) .hljs-comment {
+  color: var(--term-muted);
+}

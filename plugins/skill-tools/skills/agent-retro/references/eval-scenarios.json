@@ -1,0 +1,36 @@
+{
+  "_comment": "Skill activation + behavior evals for agent-retro. Run each across Haiku, Sonnet, and Opus. Shape follows the skill-writer eval contract: canonical trigger, ambiguous trigger (no skill name), and adjacent-but-wrong (should NOT activate).",
+  "scenarios": [
+    {
+      "name": "canonical-trigger",
+      "skills": ["agent-retro"],
+      "query": "Run a retro on my last week of sessions and harden my setup.",
+      "expected_behavior": [
+        "Activates agent-retro",
+        "Runs mine.py via 'uv run python3' with a ~7-day window",
+        "Runs the flywheel analyser via 'uv run python3', degrading gracefully if absent",
+        "Produces a ranked report split into GLOBAL and PROJECT buckets grouped by target_repo",
+        "Applies approved changes one at a time, using a shell heredoc for files under ~/.claude"
+      ]
+    },
+    {
+      "name": "ambiguous-trigger-no-skill-name",
+      "skills": ["agent-retro"],
+      "query": "Claude keeps making the same mistakes with me — can we make it stop repeating them?",
+      "expected_behavior": [
+        "Activates agent-retro even though the skill name is not mentioned",
+        "Mines transcripts for recurring friction rather than guessing",
+        "Proposes durable guardrails (CLAUDE.md rule, hook, or permission) grounded in evidence"
+      ]
+    },
+    {
+      "name": "adjacent-but-wrong-should-not-activate",
+      "skills": [],
+      "query": "Why did my last build fail?",
+      "expected_behavior": [
+        "Does NOT activate agent-retro (this is debugging one build, not a cross-session friction retro)",
+        "Investigates the build failure directly instead"
+      ]
+    }
+  ]
+}

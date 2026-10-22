@@ -1,0 +1,6 @@
+{
+  "name": "tpl-status",
+  "version": "0.1.0",
+  "description": "Status line: how long the last turn took; a toast when a turn runs long.",
+  "types": "./types/index.d.ts"
+}
