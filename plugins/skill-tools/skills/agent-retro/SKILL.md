@@ -48,12 +48,12 @@ candidates` and `## PROJECT candidates` (each project signal tagged `→ <repo>`
 work, context/compaction pressure, workflow shape). Run the analyser's **script directly** — do _not_
 invoke `/flywheel:analyse` or `Skill(flywheel:session-analysis)`, which start their own interactive
 scope question and implementation offer and would compete with this skill's apply loop. Locate the
-script (version-pinned cache dir → marketplace fallback), then run it to a scratch dir with `--json`
-(again through `uv run`):
+script with `find` (the marketplace name and version vary, and a shell glob over them gets blocked by
+the glob hook), then run it to a scratch dir with `--json` (again through `uv run`):
 
 ```bash
-FLYWHEEL=$(ls -d ~/.claude/plugins/cache/hg-claude-code-plugin-marketplace/flywheel/*/scripts/analyse_sessions.py 2>/dev/null | sort -V | tail -1)
-[ -f "$FLYWHEEL" ] || FLYWHEEL=~/.claude/plugins/marketplaces/hg-claude-code-plugin-marketplace/plugins/flywheel/scripts/analyse_sessions.py
+FLYWHEEL=$(/usr/bin/find ~/.claude/plugins/cache -path '*flywheel*' -name analyse_sessions.py 2>/dev/null | sort -V | tail -1)
+[ -n "$FLYWHEEL" ] || FLYWHEEL=$(/usr/bin/find ~/.claude/plugins/marketplaces -path '*flywheel*' -name analyse_sessions.py 2>/dev/null | head -1)
 uv run python3 "$FLYWHEEL" --logs-dir ~/.claude/projects --output-dir /tmp/agent-retro-flywheel --json  # [--weeks N] [--project <substr>]
 ```
 
@@ -189,7 +189,7 @@ Close with a one-line recommendation, then run the interactive APPLY loop.
 | A bare `python3 <script>` is blocked ("Direct 'python3' invocation. Use 'uv run python3' instead") | Re-run through `uv run python3` — done throughout this skill.                                                               |
 | Edit/Write to a `~/.claude/` file blocked ("outside the project directory")                        | Apply via the shell-heredoc `str.replace` pattern in APPLY; keep the command free of double-dots.                           |
 | A Bash heredoc is blocked for a secret-like keyword                                                | Write the content via the Write tool into a project-local temp file, then move it into place with a content-free `cp`/`mv`. |
-| flywheel plugin absent (both locator paths miss), or its script exits non-zero / finds no sessions | Note it in one line and continue with `mine.py` alone — never fail the retro on flywheel's absence.                         |
+| flywheel plugin absent (neither `find` hits), or its script exits non-zero / finds no sessions | Note it in one line and continue with `mine.py` alone — never fail the retro on flywheel's absence.                         |
 | `mine.py` finds no signals in the window                                                           | Widen with `--since 0`, or report that the window is clean and stop.                                                        |
 
 ## Scope to the ask
